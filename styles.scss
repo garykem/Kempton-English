@@ -1,4 +1,4 @@
-// @import "variables";
+@import "./variables";
 
 * {
   padding: 0;
@@ -10,32 +10,28 @@
 html,
 body {
   background-color: rgb(126, 183, 202);
+  // background-color:red;
   overflow-x: hidden;
-  // width: 100%;
+  height:100%;
 }
 
 header {
   .navbar {
-    // position:fixed;
     top: 0;
     right: 0;
     left: 0;
     max-height: 4em;
-    // z-index: 40;
-    // background-color: green;
     overflow: hidden;
     transition: max-height 0.5s ease-in-out;
 
     span {
-      // height: 2.5em;
       height: 4em;
       margin-left: 0.5em;
       padding-bottom: 2em;
-      font-size: 1em;
-
+      font-size: map-get($font, smaller);
       a {
         padding-top: 2.5em;
-        font-size: 3em;
+        font-size: map-get($font, huge);
       }
     }
 
@@ -45,31 +41,63 @@ header {
       float: right;
       margin-right: 2em;
       margin-top: 1.5em;
-
+      // display: none;
       &:hover {
         cursor: pointer;
       }
     }
-
+  }
     .navList {
       margin-top: 1em;
       margin-bottom: 1em;
       text-align: center;
+      li {
+        width: 100%;
+        text-align: center;
+        @include medQuery(350px){
+          float: left;
+          width: 100%;
+          .hamburger{
+            display: block;
+          }
+        }
+        @include medQuery(425px){
+          float: left;
+          width: 50%;
+          .hamburger{
+            display: block;
+          }
+        }
+        @include medQuery(700px){
+          float: left;
+          width: 33.3%;
+        }
+        @include medQuery(800px){
+          float: left;
+          .hamburger{
+            display: block;
+          }
+        }
 
+
+
+
+
+
+
+
+
+
+      }
       a {
-        font-size: 2em;
+        font-size: map-get($font, veryLarge);
         margin-top: 1.5em;
         padding-bottom: 2em;
-      }
     }
   }
 
   .showList {
     max-height: 20em;
-  }
-
-  .coverList {
-    max-height: 3em;
   }
 }
 
@@ -77,16 +105,14 @@ header {
   background-color: rgb(52, 77, 102);
   h1 {
     text-align: center;
-    margin-top: 1em;
+    padding-top: 2em;
     margin-bottom: 2em;
   }
-  // .book-cover{
-  //   width: 90%;
-  // }
   img{
     margin-right: 10%;
     margin-left: 10%;
     width: 80%;
+    padding-bottom: 2em;
   }
 }
 
@@ -95,111 +121,102 @@ header {
   width: 100%;
   margin-bottom: 1em;
 
-  h2 {
+  h2, h3 {
     text-align: center;
     margin-top: 1em;
     margin-bottom: 1em;
   }
-
-  h3 {
-    text-align: center;
-    margin-top: 1em;
-    margin-bottom: 1em;
-    $font: veryLarge;
-  }
-
   p {
     width: 90%;
+    font-size: map-get($font, medium);
+    text-align: center;
+    // font-size: 2em;
     margin-left: 3%;
     margin-bottom: 2.7em;
   }
-
   .teachingHead {
     margin-top: 1.8em;
   }
-
   img {
     width: 90%;
     margin-left: 1em;
   }
-
   .paraAudio {
-    font-size: 2em;
+    font-size: map-get($font, veryLarge);
     margin-bottom: 0.5em;
+    text-align: center;
   }
-
   audio {
-    // background-color: red;
     width: 70%;
     height: 3em;
-    // padding-left: 15%;
     margin-left: 50%;
     transform: translateX(-50%);
   }
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
 //SLIDESHOW
 .testimonials {
-  margin-bottom: 6em;
-
+  background-color: rgb(145, 152, 161);
+  h2{
+    padding-top: 3em;
+    margin-bottom: 1.7em;
+    text-align: center;
+    // background-color: green;
+  }
+  // margin-bottom: 6em;
   .slideshow-container {
     position: relative;
     height: 100%;
     width: 100%;
-
     a {
       position: absolute;
-      background: rgb(223, 24, 24);
-      width: 1.4em;
+      background: rgb(192, 170, 170);
+      width: 1em;
       height: 1.4em;
       top: 50%;
       transform: translateY(-50%);
-      font-size: 1.1em;
+      font-size: map-get($font, smaller);
       padding-left: 0.5em;
       &:hover {
         cursor: pointer;
       }
-
-      
-      
     }
     .prev {
-        left: 2.1em;
-       
+        left: .8em;
       }
-
     .next {
-      right: 2.1em;
-      // padding-left: 0.5em;
+      right: .8em;
     }
-
     .slide {
-      // position: absolute
       width: 100%;
       display: none;
-
       img {
-        // position: absolute;
         width: 100%;
       }
-
       blockquote {
-        // position: absolute;
         display: none;
       }
     }
-
     .dots-container {
       position: absolute;
       top: 20em;
       left: 12em;
       display: inline-block;
       padding-left: 0.7em;
-      // background-color: red;
       background-color: rgb(80, 75, 75);
-      // z-index: 10;
       width: 10em;
-
       .dot {
         display: inline-block;
         background-color: rgb(155, 146, 146);
@@ -218,19 +235,32 @@ header {
   }
 }
 
+
+
+
+
+
+
+
+
 //TEST STARTS HERE
 
 .test {
+  background-color: rgb(57, 3, 252);
+  // height: 100vh;
   .test-instructions {
     .knowledgeTest {
+      padding-top: 3em;
       text-align: center;
-      font-size: 2em;
+      font-size: map-get($font, veryLarge);
+      margin-left: 1em;
+      margin-right: 1em;
     }
 
     .chose {
       margin-top: 1.4em;
       text-align: center;
-      font-size: 1.3em;
+      font-size: map-get($font, large);
     }
   }
 
@@ -244,7 +274,7 @@ header {
 
       .question-text {
         padding-left: 1.5em;
-        font-size: 1.2em;
+        font-size: map-get($font, medium);
       }
 
       .answers {
@@ -255,8 +285,8 @@ header {
           margin: 0.6em;
           display: block;
 
-          label span {
-            font-size: 1.1em;
+          span {
+            font-size: map-get($font, medium);
           }
         }
       }
@@ -269,7 +299,7 @@ header {
         display: none;
         padding-left: 1em;
         margin-left: 1em;
-        font-size: 1.5em;
+        font-size: map-get($font, medium);
         background-color: red;
       }
 
@@ -292,40 +322,44 @@ header {
 
     .check-btn-container {
       margin-top: 1.4em;
-      padding: 1em;
+      // padding: 1em;
 
       .check {
-        box-shadow: 6px 2px 5px 0px rgba(0, 0, 0, 0.75);
+        box-shadow: $box-shadow;
+        // box-shadow: 6px 2px 5px 0px rgba(0, 0, 0, 0.75);
         padding: 0.7em;
         border-radius: 10%;
-        font-size: 1.4em;
+        font-size: map-get($font, medium);
       }
 
       .note {
         display: none;
         margin-top: 2em;
-        font-size: 1.4em;
-        // font-size: 4em;
+        font-size: map-get($font, medium);
       }
     }
 
     .check {
-      font-size: 1.3em;
+      font-size: map-get($font, medium);
       background-color: lightblue;
     }
 
     .scoreContainer {
       .scoreHeading {
         display: none;
+        @include verdictReset;
+        font-size: map-get($font, large);
+
       }
     }
 
     .finalVerdict {
       .verdict {
         display: block;
-        font-size: 1.1em;
-        padding: 0.5em 0.7em;
-        font-size: 1.2em;
+        font-size: map-get($font, smaller);
+        // padding: 0.5em 0.7em;
+        // font-size: 1.2em;
+        @include verdictReset;
       }
     }
 
@@ -333,8 +367,10 @@ header {
       .resetBtn {
         display: none;
         margin-left: 2em;
-        padding: 0.5em 0.7em;
-        font-size: 1.2em;
+        @include verdictReset;
+        border-radius: 50px;
+        box-shadow: 6px 2px 5px 0px rgba(0, 0, 0, 0.75);
+
       }
     }
   }
@@ -356,30 +392,72 @@ header {
   color: white;
 }
 
-footer{
 
-  float: left;
-  background-color: red;
+
+
+
+
+
+
+
+
+
+
+footer{
+  display: grid;
+  // height: 14em;
+  grid-template-columns: 1fr;
+  grid-template-areas: "h2"
+                        "p";
+  background-color: color(big);
+
+  .footerContactDetails{
   h2 {
+    grid-area: h2;
     text-align: center;
-    padding-top: 1.6em;
-    padding-bottom: 1.2em;
+    padding-top: 1.3em;
+    padding-bottom: .8em;
   }
   p {
+    grid-area: p;
     text-align: center;
-    font-size: 1.3em;
+    font-size: 1.2em;
     padding-bottom: 1.2em;
   }
-  .footerNav{
-    margin-left: 10%;
-    float: left;
-    .footer-item{
-      float: left;
-      margin-right: 20%;
-      font-size: 1.3em;
+}
+  .footerNav ul{
+    display: grid;
+    // height: 8em;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 2.3em);
+    grid-template-areas: 
+                        "home aboutMe testimonials"
+                        "contactMe testYourself companiesTaught";
+    li{
+      font-size: 1.2em;
+      a{
+        color: white;
+        margin-left: .5em;
+      }
+    }
+    .home{
+      grid-area: home;
       color: white;
     }
+    .aboutMe{
+      grid-area: aboutMe;
+    }
+    .contactMe{
+      grid-area: contactMe;
+    }
+    .testimonials{
+      grid-area: testimonials;
+    }
+    .testYourself{
+      grid-area: testYourself;
+    }
+    .companiesTaught{
+      grid-area: companiesTaught;
+    }
   }
-
-
 }
