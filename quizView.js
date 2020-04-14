@@ -1,81 +1,115 @@
 import { elements } from './base';
 
 
-//slideshow
-export function displaySlide(index) {
-	elements.slides.forEach((cur, i) => {
-        cur.style.display = 'none';
-        elements.dots[i].classList.remove('active');
-    })
-    elements.slides[index].style.display = 'block';
-    elements.dots[index].classList.add('active');
+export function getInput() {
+	let checkedElements = elements.nameAtt.map(cur => {
+		return document.querySelector(`[name=${cur}]:checked`);
+	});
+	return checkedElements;
 }
 
-//quiz
-export function getInputs() {
-    let userAnswers = elements.inputNames.map(cur => {
-      return document.querySelector(`[name = ${cur}]:checked`);
-    });
-    return userAnswers;
+
+export function displayErrMsgs(i) {
+	elements.errMessages[i].style.display = 'block';
 }
-  
-export function feedback(userAnswers) {
-    userAnswers.forEach((cur, i) => {
-      if (cur.dataset.answer === "true") {
-        cur.parentElement.classList.toggle("activeGreen");
-        // cur.parentElement.style.backgroundColor = 'green';
-        cur.style.color = "white";
-      } else {
-        cur.parentElement.classList.toggle("activeRed");
-        // cur.parentElement.style.backgroundColor = 'red';
-        elements.correctAns[i].style.display = "block";
-      }
-    });
+
+export function deleteErrMsgs(i) {
+	elements.errMessages[i].style.display = 'none';
+
 }
-  
+
+
+export function deleteNote(errMsgIndex) {
+	if (errMsgIndex === -1) {
+		elements.note.style.display = 'none';
+	}
+}
+
+
+export function displayNote() {
+	elements.note.style.display = 'inline-block';
+}
+
+export function feedback(checkedElements) {
+	checkedElements.forEach((cur, i) => {
+		if (cur.dataset.answer === 'true') {
+			cur.parentElement.classList.add('activeGreen');
+
+		} else if (cur.dataset.answer === 'false') {
+			cur.parentElement.classList.add('activeRed');
+			elements.correctAns[i].style.color = 'blue';
+			elements.correctAns[i].style.display = 'block';
+		}
+	});
+}
 export function displayScore(score) {
-  elements.scoreHeading.style.display = "block";
-  console.log(score)
-//   const markup = `
-//   Your score is: score / elements.correctAns.length;
-// `;
-  // elements.yourScore.innerHTML = `${score} / ${elements.correctAns.length}`;
-  elements.yourScore.innerHTML = `${score} / ${elements.questionsLength}`;
-  console.log(elements.correctAns.length)
-  // elements.yourScore.insertAdjacentHTML('beforeend', markup);
+	elements.scoreContainer.style.display = 'block';
+	// elements.yourScore.innerHTML = score;
+	// let ansLength = chkElements.length;
+	console.log(elements.correctAns.length)
+
+	console.log(score)
+	elements.yourScore.innerHTML = `${score} / ${elements.correctAns.length}`;
+	
 }
-  
-export function disabled() {
-    elements.checkBtn.disabled = "true";
-    elements.allInputs.forEach(cur => (cur.disabled = "true"));
+
+export function displayComment(score) {
+	elements.scoresArray.forEach((cur, i) => {
+		if (cur === score) {
+			elements.commentContainer.style.display = 'block';
+			elements.commentContainer.innerHTML = elements.comments[i];
+		}
+	})
 }
-  
+
+// export function displayCorrectAnswer() {
+// 	elements.correctAns.forEach(cur => {
+		
+// 	});		
+// }
+
 export function displayResetBtn() {
-    elements.resetBtn.style.display = "block";
+	elements.resetBtn.style.display = 'block';
 }
-  
-export function displayNoteAndErrMessages(userAnswers) {
-    userAnswers.forEach((cur, i) => {
-      if (cur === null) {
-        elements.errorMessages[i].style.display = "block";
-        elements.note.style.display = "block";
-      }
-    });
+
+
+export function resetUi() {
+	elements.checkBtn.disabled = false;
+
+	elements.errMessages.forEach((cur, i) => {
+		cur.style.display = 'none';
+		elements.correctAns[i].style.display = 'none';
+	});
+
+	elements.inputs.forEach(cur => {
+		cur.checked = false;
+		cur.disabled = false;
+		cur.parentElement.classList.remove('activeGreen');
+		cur.parentElement.classList.remove('activeRed');
+	})
+
+	elements.commentContainer.style.display = 'none';
+	elements.scoreContainer.style.display = 'none';
+	elements.resetBtn.style.display = 'none';
 }
-  
-export function displayVerdict(score) {
-    let potentialScores = [0, 1, 2, 3, 4];
-    let verdictStatements = [
-      "You really need to improve!",
-      "There is room for improvement!",
-      "Well, you're half way there.",
-      "Oh, you almost scored top marks!",
-      "Well done! Perfect score."
-    ];
-    potentialScores.forEach((cur, i) => {
-      if (cur === score) {
-        elements.verdict.style.display = "block";
-        elements.verdict.innerHTML = verdictStatements[i];
-      }
-    });
-  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
