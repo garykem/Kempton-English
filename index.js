@@ -1,235 +1,120 @@
-import "../css/styles.scss";
-import { elements } from "./views/base";
-import * as Quiz from "./models/Quiz";
-import * as quizView from "./views/quizView";
+import '../css/styles.scss';
+import { elements } from './views/base';
+import * as quiz from './models/Quiz';
+import * as quizView from './views/quizView';
+import * as slideshow from './models/Slideshow';
+import * as slideshowView from './views/slideshowView';
 
-let data = {
-  index: 0,
-  score: 0
+const data = {
+	index: 0,
+	score: 0
 };
 
-function init() {
-  elements.slides[data.index].style.display = "block";
-  elements.dots[data.index].classList.add("active");
+//code for the navbar
+function controlToggle() {
+	elements.nav.classList.toggle('showList');
 }
-init();
+// let togClasses = Array.from(document.querySelectorAll('.toggle')).map(cur=> cur.classList);
+// console.log({togClasses})
+// console.log({elements})
+elements.body.addEventListener('click', (e) => {
+	//event listeners for navbar	
+	if (e.target.matches('.toggle')) {
+		controlToggle();
+	}
 
-elements.body.addEventListener("click", e => {
-  if (e.target.matches(".hamburger")) {
-    elements.navbar.classList.toggle("showList");
-  }
-  if (e.target.matches(".nav-item, .nav-item *")) {
-    elements.navbar.classList.remove("showList");
-  }
+	// event listeners for slideshow	
+	elements.arrowClasses.forEach((cur, i) => {
+		if (e.target.matches(cur)) {
+			controlMoveSlides(elements.args1[i])
+		}
+	})
+	elements.dotsClasses.forEach((cur, i) => {
+		if (e.target.matches(`.${cur}`)) {
+			controlShowSlide(elements.args2[i])
+		}
+	});
 
-  elements.arrows.forEach((cur, i) => {
-    if (e.target.matches(cur)) {
-      ctrlMoveSlide(elements.arrowsCount[i]);
-    }
-  });
-  elements.dotsClasses.forEach((cur, i) => {
-    if (e.target.matches(`.${cur}`)) {
-      ctrlJumpToSlide(elements.dotsCount[i]);
-    }
-  });
-  if (e.target.matches(".check")) {
-    e.preventDefault();
-    controlScore();
-  }
-  elements.answersClasses.forEach((cur, i) => {
-    if (e.target.matches(`.${cur}, .${cur} *`)) {
-      elements.errorMessages[i].style.display = "none";
-      let errMsgIndex = elements.errorMessages.findIndex(
-        cur => cur.style.display === "block"
-      );
-      console.log(errMsgIndex);
-      if (errMsgIndex === -1) {
-        elements.note.style.display = "none";
-      }
-    }
-  });
+	//event listeners for quiz
+	if (e.target.matches('.check,.check *')) {
+		e.preventDefault();
+		testControl();
+
+	}
+
+	if (e.target.matches('.resetBtn,.resetBtn *')) {
+		resetControl();
+	}
+	
+	elements.labelGroups.forEach((cur, i) => {
+		if (e.target.matches(`.${cur}, .${cur} *`)) {
+			errMsg_noteControl(i);
+		}
+	})
+
 });
 
+
+//code for the slideshow
+
+const init = (() => {
+	elements.slides[data.index].style.display = 'block';
+	elements.dots[data.index].classList.add('active');
+})();
+
 setInterval(() => {
-  ctrlMoveSlide(1);
-}, 6000);
+	controlMoveSlides(1);
+}, 6000)
 
-function ctrlMoveSlide(n) {
-  data.index = Quiz.updateIndex(data.index, n);
-  quizView.displaySlide(data.index);
+function controlMoveSlides(n) {
+	data.index = slideshow.updateIndex(data.index, n);	
+	slideshowView.displaySlide(data.index);
 }
 
-function ctrlJumpToSlide(n) {
-  data.index = n;
-  quizView.displaySlide(data.index);
-}
-
-function controlScore() {
-  //get user answers
-  let userAnswers = quizView.getInputs();
-
-  //find index of first unchecked answers
-  let nullIndex = nullIndexFinder(userAnswers);
-  if (nullIndex === -1) {
-    //give feedback (colored background, display correct answers for the wrong answers, and final comment)
-    quizView.feedback(userAnswers);
-
-    //calculate score
-    data.score = Quiz.calculateScore(data.score, userAnswers);
-
-    // display score
-    quizView.displayScore(data.score);
-
-    //display verdict statements
-    quizView.displayVerdict(data.score);
-
-    //disable check and radio buttons
-    quizView.disabled();
-
-    //display reset button
-      quizView.displayResetBtn();
-      
-  } else {
-    quizView.displayNoteAndErrMessages(userAnswers);
-  }
+function controlShowSlide(n) {
+	data.index = slideshow.resetIndex(data.index, n);
+	slideshowView.displaySlide(data.index);
 }
 
 
-function nullIndexFinder(userAnswers) {
-  let nullIndex = userAnswers.findIndex(cur => cur === null);
-  return nullIndex;
+//code for the test
+
+function errMsg_noteControl(ind) {
+	quizView.deleteErrMsgs(ind);
+	let errMsgIndex= quiz.findingErrMsgIndex()
+	quizView.deleteNote(errMsgIndex);
 }
 
 
 
+function testControl() {
+
+	let checkedElements = quizView.getInput();
+	
+	let indexUnchecked = quiz.findIndexUnchecked(checkedElements);
+	
+	if (indexUnchecked === -1) {
+		data.score = quiz.calcScore(checkedElements, data.score);
+		console.log(checkedElements)
+		quizView.feedback(checkedElements);
+		quizView.displayScore(data.score);
+		quizView.displayComment(data.score);
+		// quizView.displayCorrectAnswer(checkedElements);
+		quizView.displayResetBtn();
+
+	} else {
+		checkedElements.forEach((cur, i) => {
+			if (cur === null) {
+				quizView.displayErrMsgs(i)
+			}
+		});
+		quizView.displayNote();
+	}
+
+}
 
 
-
-
-
-
-
-// const body = document.querySelector('body');
-// // const inputs = Array.from(document.querySelectorAll('input')).map(cur => cur.name);
-// const dataAnsTrue = Array.from(document.querySelectorAll('[data-answer = "true"]')).map(cur => cur.name);
-// const correctAns = Array.from(document.querySelectorAll('.correctAns')).map(cur => cur.textContent);
-// const errMssge = document.querySelectorAll('.errMessage');
-// const inputs = Array.from(document.querySelectorAll(`input`)).map(cur=> cur.dataset.answer)
-
-// console.log(inputs)
-
-// body.addEventListener('click', e => {
-//     if (e.target.matches('.check')) {
-//         e.preventDefault();
-//         controlScore();
-//     }
-// })
-
-// function controlScore() {
-//     //select checked elements
-//     let checked = userInput();
-//     // let errMessgeDisplayed = displayErrMessage(checked);
-
-//     let nullIndex = findNullIndex(checked);
-//     if (nullIndex !== -1) {
-//         //
-//     } else {
-//         return '';
-//     }
-//     // console.log(errMessgeDisplayed);
-
-// }
-
-// function userInput() {
-//     console.log(dataAnsTrue)
-//     let elementsChecked = dataAnsTrue.map(cur => {
-//         return document.querySelector(`[name=${cur}]:checked`);
-//     })
-//     console.log(elementsChecked)
-//     return elementsChecked;
-// }
-
-// // function displayErrMessage(checked) {
-// //     if (checked !== null) {
-
-// //     }
-// // }
-
-// function findNullIndex(checked) {
-//     let nullIndex = checked.findIndex(cur => cur === null);
-//     console.log(nullIndex)
-//     return nullIndex;
-// }
-
-// const inputNames = Array.from(document.querySelectorAll(`[data-answer = "true"]`)).map(cur => cur.name);
-// let checked = inputNames.map(cur => {
-//         return document.querySelector(`[name=${cur}]:checked`);
-//     })
-
-// console.log(inputNames)
-//this gets an array of strings = ["A1", "A2", "A3", "A4",]
-
-//i want the value that is attached to the inputs that each string represents
-
-// const inputNames = Array.from(document.querySelectorAll(`[data-answer = "true"]`)).map(cur => cur.name)
-//(give an array of ["A1", "A2","A3", "A4"]
-
-// const inputNames = Array.from(document.querySelectorAll(`[id$="_a1"]`)).map(cur=> cur.name)  //this gets me the whole input with all the data in it
-// console.log(inputNames)
-
-// const inputs = Array.from(document.querySelectorAll('input')).map(cur=> cur.value);
-// console.log(inputs)
-
-// inputs.map(cur => {
-//     return document.querySelectorAll(`[name=${cur}].value`)
-// })
-
-// body.addEventListener('click', e => {
-//     if (e.target.matches('.check')) {
-//         e.preventDefault();
-//         controlScore();
-//     }
-// })
-
-// function controlScore() {
-//     let inputs = getInputs()
-// }
-
-// function getInputs() {
-//     let inputsValue = inputNames.map(cur => {
-//         let values = Array.from(document.querySelectorAll(`[name=${cur}]`))
-//         .map(cur => cur.value);
-//         console.log(values)
-//         return values
-//     })
-//     //this gives the actual answers - the values
-// }
-
-// const inputValues = inputs.map(cur => cur.value)
-// console.log(inputValues)
-
-// let namesChecked = inputValues.map(cur => cur.checked)
-// let namesChecked = inputValues.map(cur => {
-//     return document.querySelector(`[name=${cur}]:checked`)
-// })
-// console.log(namesChecked)
-
-// body.addEventListener('click', e => {
-//     if (e.target.matches('.check')) {
-//         e.preventDefault();
-//         controlScore();
-//     }
-// })
-
-// function controlScore() {
-//     let ansChecked = getInputs();
-//     console.log(ansChecked)
-// }
-
-// function getInputs() {
-//     let checked = inputNames.map(cur => {
-//         return document.querySelector(`[name=${cur}]:checked`);
-//     })
-//     console.log(checked)
-//     return checked;
-// }
+function resetControl(){
+	data.score = quiz.resetScore(data.score);
+	quizView.resetUi()
+}
