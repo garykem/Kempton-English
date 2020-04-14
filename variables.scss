@@ -2,9 +2,12 @@ $color:(
 	bbg:#FDFFFC,
 	primary: lighten(#2EC4B6,44%),
 	secondary: rgb(99, 133, 201),
-	accent: #40a7a9
+	accent: #40a7a9,
+	// red: red,
+	big: rgb(45, 57, 110)
 );
 $font:(
+	huge: 2.5em,
 	veryLarge: 2em,
 	large: 1.5em,
 	medium: 1.2em,
@@ -12,5 +15,24 @@ $font:(
 	small: .5em
 );
 
-// rgb(237, 238, 240)
-// #0d8e93
+$box-shadow: 6px 2px 5px 0px rgba(0, 0, 0, 0.75);
+
+@mixin verdictReset{
+	padding: 0.5em 0.7em;
+	font-size: map-get($font, medium);
+}
+@function color($clr){
+	@return map-get($color, $clr); 
+  }
+
+
+@mixin medQuery($arg){
+	@media screen and (min-width: $arg){
+		@content;
+	}
+}
+@mixin cf(){
+	content: "";
+	display: table;
+	clear: both;
+}
