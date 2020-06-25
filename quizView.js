@@ -13,6 +13,7 @@ export function displayErrMsgs(i) {
 	elements.errMessages[i].style.display = 'block';
 }
 
+
 export function deleteErrMsgs(i) {
 	elements.errMessages[i].style.display = 'none';
 
@@ -37,19 +38,14 @@ export function feedback(checkedElements) {
 
 		} else if (cur.dataset.answer === 'false') {
 			cur.parentElement.classList.add('activeRed');
-			elements.correctAns[i].style.color = 'blue';
 			elements.correctAns[i].style.display = 'block';
 		}
 	});
 }
 export function displayScore(score) {
 	elements.scoreContainer.style.display = 'block';
-	// elements.yourScore.innerHTML = score;
-	// let ansLength = chkElements.length;
-	console.log(elements.correctAns.length)
-
-	console.log(score)
-	elements.yourScore.innerHTML = `${score} / ${elements.correctAns.length}`;
+	elements.scoreHeading.style.display = "block";
+	elements.yourScore.innerHTML = `${score}/${elements.questions.length}`;
 	
 }
 
@@ -62,14 +58,11 @@ export function displayComment(score) {
 	})
 }
 
-// export function displayCorrectAnswer() {
-// 	elements.correctAns.forEach(cur => {
-		
-// 	});		
-// }
 
 export function displayResetBtn() {
-	elements.resetBtn.style.display = 'block';
+	elements.reset.style.display = 'inline-block';
+	elements.resetBtn.style.display = 'inline-block';
+
 }
 
 
@@ -91,6 +84,7 @@ export function resetUi() {
 	elements.commentContainer.style.display = 'none';
 	elements.scoreContainer.style.display = 'none';
 	elements.resetBtn.style.display = 'none';
+	elements.reset.style.display = 'none';
 }
 
 
