@@ -15,28 +15,41 @@
 			<nav class='navbar'>
 				<span><a href="#page-top">Kempton</a></span>
 				<img class="toggle hamburger" id="hamburger" src="img/hamburger.png" alt="Menu">
-
+				<hr>
 				<ul class="navList">
-					<li class="nav-item home"><a href="#page-top" class="toggle menu-link">Home</a></li>
-					<li class="nav-item aboutMe"><a href="#about-me" class="toggle menu-link"> About me</a></li>
+					<li class="nav-item home"><a href="#home" class="toggle menu-link">Home</a></li>
+					<li class="nav-item mpvBook"><a href="#mpvBook" class="toggle menu-link">The book</a></li>
+					<li class="nav-item aboutMe"><a href="#aboutMe" class="toggle menu-link">About me</a></li>
 					<li class="nav-item testimonials"><a href="#testimonials" class="toggle menu-link">Testimonials</a>
 					</li>
-					<li class="nav-item contactMe"><a href="#test" class="toggle menu-link">Test yourself</a></li>
-					<li class="nav-item testYourself"><a href="#contact-me" class="toggle menu-link"> Contact me</a>
-					</li>
+					<li class="nav-item test"><a href="#test" class="toggle menu-link">Test yourself</a></li>
+					<li class="nav-item contactMe"><a href="#contactMe" class="toggle menu-link">Contact me</a></li>
 				</ul>
 			</nav>
 
 
 
 
+			<section class="intro home" id="home">
+				<h1 class="introHeading">There are hundreds of phrasal verbs in English. Yes... hundreds and they're
+					everywhere!</h1>
+				<div class="introContainer">
+					<p class="everywherePara">Used <strong><em>massively</em></strong> in the business world and for
+						exams like IELTS, TOEFL and TOEIC.</p>
+					<h2 class="question">So HOW do you learn and use them in a fun and interesting way?</h2>
+				</div>
+
+				<p class="bookPara"><span><a href="#mpvBook">Mastering Phrasal Verbs Like a Native English Speaker Volume 1</a></span> uses
+					repetition, context, stories and testing to help you really learn them. So what are you waiting for?
+					<span>Now</span> is the time to take action. Go through <a href="#mpvBook">the book</a> and see for yourself how well it
+					works!</p>
+			</section>
 
 
 
 
 
-
-			<section id='page-top' class="about-book">
+			<section class="about-book" id="mpvBook">
 				<h1>Mastering Phrasal Verbs Like a Native Speaker Vol 1</h1>
 				<div>
 					<a href="https://www.booksamillion.com/p/Mastering-Phrasal-Verbs-Like-Native/Gary-Kempton/L42944694?id=5808328001720#"
@@ -67,18 +80,16 @@
 
 		<main>
 			<a>
-				<section class="main-section about-me" id="about-me">
-					<h2>About Gary Kempton</h2>
+				<section class="main-section about-me" id="aboutMe">
+					<h1>About Gary Kempton</h1>
 					<div class="materialsDiv">
 						<h3 class="mat-H1">English materials writing</h3>
 						<p class="materials">Gary has written a lot of materials over the years for both learning and
 							testing and is the author and producer of the audio-book, <a
 								href="https://www.audible.co.uk/pd/Mastering-Phrasal-Verbs-Like-a-Native-English-Speaker-Audiobook/B00DUM1MN4"
 								target="_blank"><em><strong>'Mastering Phrasal Verbs Like a Native English Speaker
-										Volume
-										1'</a></strong></em>, a 3 hour audio-book (with pdf) designed for busy students
-							who
-							want to learn and master over 100 phrasal verbs in a stress-free way.</p>
+										Volume 1'</a></strong></em>, a 3 hour audio-book (with pdf) designed for busy
+							students who want to learn and master over 100 phrasal verbs in a stress-free way.</p>
 
 					</div>
 
@@ -86,9 +97,9 @@
 						<h3 class="teachingHead">Teaching</h3>
 						<p class="teachingDetails">He has also been a freelance online ESL teacher since 2011, working
 							for
-							Learnlight LCC,based in Madrid. His students have worked for Oracle EMEA, 3M, and
+							Learnlight LCC,based in Madrid. His students have worked for Oracle EMEA, 3M,
 							International
-							Paper He's had students from Europe, the Americas, Asia, and Africa.</p>
+							Paper, and many others. He's had students from Europe, the Americas, Asia, and Africa.</p>
 
 						<p>Previous to his online work, he was an English teacher in China, for over a year.</p>
 					</div>
@@ -96,8 +107,7 @@
 					<div class="testingDiv">
 						<h3>Testing</h3>
 						<p>Test writer, Taiwan LTTC. During his early days of teaching, he wrote several tests at
-							intermediate
-							and advanced level for students in Taiwan</p>
+							intermediate and advanced level for students in Taiwan.</p>
 					</div>
 
 					<div class="developingDiv">
@@ -105,23 +115,25 @@
 						<p>Since 2019, Gary has been learning web development, specializing in Javascript.</p>
 					</div>
 
-					
-					<div class="paraAudio">
-						<p>Click here to listen more.</p>
-						<audio controls>
-							<source src="" type="audio/ogg" class="audio">
-							<source src="book1.mp3" type="audio/mpeg" class="audio">
-							Your browser does not support the audio element.
-							</audio>
-					</div>
 
-					<div class="sampleDiv">
-						<p>Click here to listen to a sample
-						</p>
-						<audio controls>
-							<source src="sample-Business.mp3" type="audio/mpeg" class="audio">
-							Your browser does not support the audio element.
-						</audio>
+					<div class="bothAudios">
+						<div class="paraAudio">
+							<p>What is this book about?</p>
+							<audio controls>
+								<source src="" type="audio/ogg" class="audio">
+								<source src="book1.mp3" type="audio/mpeg" class="audio">
+								Your browser does not support the audio element.
+							</audio>
+						</div>
+
+						<div class="sampleDiv">
+							<p>Click here to listen to a sample</p>
+							<audio controls>
+								<source src="" type="audio/ogg" class="sampleAudio">
+								<source src="sample-Business.mp3" type="audio/mpeg" class="sampleAudio">
+								Your browser does not support the audio element.
+							</audio>
+						</div>
 					</div>
 				</section>
 				<!-- end of the bio section -->
@@ -136,31 +148,28 @@
 
 
 				<section class="main-section testimonials" id="testimonials">
-					<h2>What my students have said about the book</h2>
+					<h1>What my students have said about the book</h1>
 					<div class="slideshow-container">
-						<a class="prev">&#10094;</a>
-						<a class="next">&#10095;</a>
+
 						<div class="slide">
-							<img src="img/cafe.jpg" alt="cafe">
+							<img src="img/park1cut.jpg" alt="park1">
 							<blockquote>"Well as a learner of English I find that phrasal verbs mp3s presented by Gary
-								is
-								really very useful and helpful for learners of English all over the world because he
+								is really very useful and helpful for learners of English all over the world because he
 								classifies them so elegantly and effectively, thus every English learner can understand
-								and
-								memorize them easily"
+								and memorize them easily"
 								<span>- Maryam - Morocco</span>
 							</blockquote>
 						</div>
 						<div class="slide">
-							<img src="img/park2cut.jpg" alt="">
+							<img src="img/park2cut.jpg" alt="Park">
 							<blockquote>"Let me congratulate with you! Your work is simply great. I'm sure this is
-								exactly
-								what a non-native English speaker needs to learn and improve your charming language"
+								exactly what a non-native English speaker needs to learn and improve your charming
+								language"
 								<span>- Fabrizio - Turin, Italy</span>
 							</blockquote>
 						</div>
 						<div class="slide">
-							<img src="img/algiersCenter.jpg" alt="">
+							<img src="img/park3cut.jpg" alt="">
 							<blockquote>Gary Kempton has worked on developing a very pedagogical and enjoyable way of
 								dealing with phrasal verbs. Now there's no excuse not to learn them!"
 								<span>- Elva - Madrid, Spain</span>
@@ -169,10 +178,8 @@
 						<div class="slide">
 							<img src="img/med1cut.jpg" alt="pic of mediterranean">
 							<blockquote>"The activities are clear and easy to understand, it makes easy to understand
-								the
-								meaning of the phrasal verbs and also it helps you learn how they can be use
-								grammatically,
-								semantically and syntactically right."
+								the meaning of the phrasal verbs and also it helps you learn how they can be use
+								grammatically, semantically and syntactically right."
 								<span>- Karen - Madrid, Spain</span>
 							</blockquote>
 						</div>
@@ -181,13 +188,13 @@
 							<blockquote>"It's a good idea to use an example for each of the verbs. It also helps much to
 								have to write a sentence for each of the verbs and, also, the exercise of listening the
 								audio and after writing what you've been listening. This is a complete exercise to learn
-								a
-								phrasal verb, his meaning, his sound, his use, his writing. I hope I can improve my
-								English
-								with this type of exercise."
+								a phrasal verb, his meaning, his sound, his use, his writing. I hope I can improve my
+								English with this type of exercise."
 								<span>- Susanna - Madrid, Spain</span>
 							</blockquote>
 						</div>
+						<a class="prev">&#10094;</a>
+						<a class="next">&#10095;</a>
 						<div class="dots-container">
 							<span class="dot one"></span>
 							<span class="dot two"></span>
@@ -200,6 +207,8 @@
 
 				</section>
 				<!-- end of the testimonials section -->
+
+
 
 
 
@@ -352,16 +361,17 @@
 							<button class="check">Check answers</button><br />
 							<span class="note">Your test is incomplete. Please scroll up!</span>
 						</div>
-						<div class="scoreContainer">
 
+						<div class="scoreContainer">
 							<h2 class="scoreHeading">Your score is <span class="yourScore"></span></h2>
 						</div>
+
 						<div class="finalVerdict">
 							<h2><span class="verdict"></span></h2>
 						</div>
 
 						<div class="reset">
-							<button class="resetBtn">Try again</button>
+							<button class="resetBtn"><a href="#test">Try again</a></button>
 						</div>
 
 					</form>
@@ -380,7 +390,7 @@
 
 
 <footer>
-	<section class="main-section contact-me" id="contact-me">
+	<section class="main-section contact-me" id="contactMe">
 		<div class="footerContactDetails">
 			<h2>Contact me at the following email address</h2>
 			<p>garykem30@yahoo.co.uk</p>
@@ -397,11 +407,13 @@
 		</form>
 		<nav class="footerNav">
 			<ul>
-				<li class="footer-item home"><a href="#page-top">Home</a></li>
-				<li class="footer-item aboutMe"><a href="#about-me"> About me</a></li>
-				<li class="footer-item contactMe"><a href="#contact-me">Contact me</a></li>
-				<li class="footer-item testimonials"><a href="#testimonials">Testimonials</a></li>
+				<li class="footer-item home"><a href="#home">Home</a></li>
+				<li class="footer-item mpvBook"><a href="#mpvBook">The Book</a></li>
+				<li class="footer-item aboutMe"><a href="#aboutMe">About me</a></li>
+				<li class="footer-item contactMe"><a href="#contactMe">Contact me</a></li>
 				<li class="footer-item testYourself"><a href="#test">Test yourself</a></li>
+				<li class="footer-item"><a href="#testimonials">Testimonials</a></li>
+				<li class="copyright">&#169; Copyright Gary Kempton All rights reserved</li>
 				<!-- <li class="footer-item companiesTaught"><a href="#clients">Companies taught</a></li> -->
 			</ul>
 		</nav>
