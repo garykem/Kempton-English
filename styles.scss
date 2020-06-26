@@ -1432,15 +1432,14 @@ footer {
       width: 100%;
       // background-color: orange;
       display: inline-block;
-      // padding-top: ;
       padding-bottom: 1em;
       margin-bottom: 0;
-      // margin-left: 0em;
       height: 3em;
       float: left;
     }
     @include medQuery(425px) {
       margin-left: 0.1em;
+      // background-color: green;
       font-size: map-get($font, smaller) * 1.2;
     }
     @include medQuery(480px) {
@@ -1458,10 +1457,14 @@ footer {
       margin-left: 0;
       // background-color: brown;
     }
-    @include medQuery(991px) {
+
+   @include medQuery(898px) {
       //  background-color: brown;
+      margin-left: 5%;
+      // padding-left: 1%;
+    } 
+    @include medQuery(991px){
       margin-left: 2%;
-      padding-left: 1%;
     }
     @include medQuery(1100px) {
       // background-color: orange;
@@ -1473,7 +1476,7 @@ footer {
     li {
       font-size: map-get($font, smaller);
       @include medQuery(350px) {
-        // background-color: green;
+        // background-color: orange;
         display: inline-block;
         width: 20%;
         margin-left: 20%;
@@ -1485,10 +1488,13 @@ footer {
       }
       @include medQuery(425px) {
         // background-color: red;
-        margin-top: 1em;
+        margin-top: .5em;
         margin-left: 1%;
-        width: 14%;
+        width: 30%;
         margin-right: 2%;
+        &:nth-child(7){
+          width: 100%;
+        }
       }
       @include medQuery(480px) {
         font-size: map-get($font, smaller);
@@ -1502,22 +1508,22 @@ footer {
       }
       @include medQuery(700px) {
         margin-left: 0;
-        width: 17%;
+        // background-color: red;
       }
-      @include medQuery(767px) {
-        font-size: map-get($font, medium);
-      }
+
       @include medQuery(898px) {
         // text-align: center;
-        width: 15%;
-        margin-right: 4%;
-        // background-color: blue;
+        width: 25%;
+        margin-left: 6%;
+        transform: translateX(-50%);
+        // background-color: red;
       }
       @include medQuery(991px) {
         // background-color: red;
         font-size: map-get($font, smaller) * 1.1;
-        width: 13%;
-        margin-right: 3%;
+        width: 11%;
+        margin-left: 3%;
+        // margin-right: 3%;
         float: left;
       }
       @include medQuery(1100px) {
@@ -1575,5 +1581,19 @@ footer {
         }
       }
     }
+    .copyright{
+      @include medQuery(576px){
+        // background-color: red;
+      }
+      @include medQuery(898px){
+        text-align: center;
+        // background-color: red;
+        padding-top: .5em;
+        padding-bottom: 1.5em;
+        margin-left: 45%;
+        transform: translateX(-50%);
+      }
+    }
   }
+
 }
