@@ -8,7 +8,6 @@
 }
 
 body {
-  // background-color: rgb(126, 183, 202);
   overflow-x: hidden;
   background-color: white;
 
@@ -18,23 +17,22 @@ body {
   }
   .container {
     @include medQuery(1100px) {
-      width: 100%;
       margin: 0 auto;
     }
   }
   h1,
   h2 {
-    color: map-get($color, big);
+    color: map-get($color, navy);
   }
   h3 {
     color: map-get($color, secondary);
   }
   button {
-    background-color: map-get($color, big);
+    background-color: map-get($color, navy);
     border-radius: 25px;
   }
   strong {
-    color: map-get($color, big);
+    color: map-get($color, navy);
   }
 }
 
@@ -57,7 +55,6 @@ header {
       top: 0;
       right: 0;
       left: 0;
-      max-height: 4em;
     }
     @include medQuery(1100px) {
       position: fixed;
@@ -67,7 +64,6 @@ header {
       opacity: 1;
       margin-bottom: 0;
       padding-bottom: 0;
-      // max-height: 4em;
     }
     span {
       display: inline-block;
@@ -80,11 +76,9 @@ header {
       @include medQuery(991px) {
         float: left;
         font-weight: bold;
-        margin: .5em 0em 1em 2em;
-        // background-color: red;
+        margin: 0.5em 0em 1em 2em;
       }
       @include medQuery(1100px) {
-        // float: left;
         margin: 0em 0em 1em 2em;
         font-size: 2em;
       }
@@ -112,7 +106,6 @@ header {
         display: none;
       }
       @include medQuery(1100px) {
-        display: none;
         float: none;
       }
     }
@@ -124,24 +117,20 @@ header {
       }
       @include medQuery(991px) {
         top: 0;
-        margin-top: .5em;
-        padding-top: 0;
+        margin-top: 0.5em;
         margin-right: 2em;
-        padding-bottom: 1em;
         margin-left: 10em;
-        // background-color: green;
+        padding-top: 0;
+        padding-bottom: 1em;
         width: 85%;
       }
       @include medQuery(1100px) {
-        margin-top: 0.5em;
         margin-bottom: 0;
         padding-bottom: 0;
         width: 82%;
         margin-left: 20%;
         margin-right: 0;
-        // background-color: red;
       }
-
       li {
         display: inline-block;
         width: 100%;
@@ -152,11 +141,6 @@ header {
           float: left;
           padding-top: 0;
           width: 100%;
-          // background-color: red;
-        }
-        @include medQuery(700px) {
-          float: left;
-          // width: 100%;
         }
         @include medQuery(991px) {
           width: 15%;
@@ -164,8 +148,6 @@ header {
           margin-top: 0;
           margin-right: 1%;
           font-size: map-get($font, small) * 1.5;
-          // margin-left: 0%;
-          // background-color: green;
         }
         @include medQuery(1100px) {
           width: 14%;
@@ -181,21 +163,15 @@ header {
         @include medQuery(425px) {
           margin-top: 0.5em;
           padding-bottom: 0.5em;
-          // background-color: pink;
         }
         @include medQuery(991px) {
-          margin-top: 0.5em;
-          // background-color: brown;
           padding: 0;
-        }
-        @include medQuery(1100px) {
-          // margin-top: 0.5em;
         }
       }
     }
   }
   .showList {
-    max-height: 20em;
+    max-height: 23em;
     @include medQuery(991px) {
       max-height: 4em;
     }
@@ -209,41 +185,24 @@ header {
 
 
 .intro {
-  @include medQuery(425px){
-    // background-color: orange;
-    padding-top: .5em;
+  @include medQuery(425px) {
+    padding-top: 0.5em;
   }
   @include medQuery(991px) {
-    float: left;
-    // background-color: orange;
+    padding-top: 1em;
   }
-  @include medQuery(1100px) {
-    padding-top: 4em;
-    margin-top: 3em;
-    // background-color: red;
-  }
-
   .introHeading {
     @include medQuery(425px) {
-      // background-color: lightblue;
       text-align: center;
-      // padding-top: .5em;
       margin: 1em 5% 0.5em;
-      // margin-left: 50%;
-      // transform: translateX(-50%);
       font-size: map-get($font, veryLarge);
       padding-top: 1.5em;
     }
     @include medQuery(576px) {
       font-size: map-get($font, huge);
-      margin-top: .5em;
-    }
-    @include medQuery(898px) {
-      font-size: map-get($font, huge);
-      // margin-top: 1em;
+      margin-top: 0.5em;
     }
     @include medQuery(1100px) {
-      // background-color: red;
       margin-top: 0;
       padding-top: 0.5em;
     }
@@ -252,7 +211,6 @@ header {
     @include medQuery(991px) {
       float: left;
       width: 100%;
-      //  background-color: red;
       margin-bottom: 2em;
     }
   }
@@ -260,25 +218,19 @@ header {
   .question,
   .bookPara {
     @include medQuery(425px) {
-      // background-color: orange;
       margin-top: 1em;
-      // margin-bottom: 1em;
       font-size: map-get($font, large);
       width: 80%;
       margin-left: 10%;
       margin-right: 10%;
-      // margin-left: 50%;
-      // transform: translateX(-50%);
       text-align: center;
     }
     @include medQuery(898px) {
-      // background-color: orange;
       margin-top: 0.8em;
     }
   }
   .everywherePara {
     @include medQuery(991px) {
-      // background-color: blue;
       margin-top: 2.3em;
       font-size: map-get($font, large);
     }
@@ -288,72 +240,53 @@ header {
       margin-top: 2em;
       margin-bottom: 1.5em;
       font-size: map-get($font, medium);
-      // width: 90%;
-      // margin-left: 50%;
-      // transform: translateX(-50%);
-      // text-align: center;
-      // background-color: green;
     }
     @include medQuery(576px) {
       font-size: map-get($font, medium) * 1.1;
-      // background-color: red;
     }
     @include medQuery(700px) {
       font-size: map-get($font, medium) * 1.2;
-      // background-color: red;
     }
     @include medQuery(898px) {
       font-size: map-get($font, medium) * 1.4;
       margin-top: 1.5em;
-      // background-color: red;
     }
     @include medQuery(991px) {
       margin-top: 1.9em;
-      // background-color: red;
     }
   }
   .everywherePara,
   .question {
     @include medQuery(991px) {
-      // background-color: brown;
       float: left;
       width: 30%;
     }
   }
-
   .bookPara {
     @include medQuery(425px) {
       margin-top: 2em;
-      // background-color: pink;
       line-height: 1.2;
       font-size: map-get($font, medium);
     }
     @include medQuery(425px) {
       margin-top: 1.5em;
-      // background-color: pink;
     }
     @include medQuery(700px) {
       font-size: map-get($font, large);
       margin-top: 1em;
-      // background-color: pink;
     }
     @include medQuery(898px) {
       font-size: map-get($font, large) * 1.1;
       margin-top: 1.3em;
-      // background-color: pink;
     }
     @include medQuery(991px) {
       clear: both;
-      margin-bottom: 2em;
-
       margin-bottom: 2.5em;
     }
     span {
       @include medQuery(425px) {
         font-size: map-get($font, medium) * 1.1;
         text-decoration: underline;
-        // background-color: orange;
-        // width: 100%;
       }
     }
   }
@@ -364,77 +297,64 @@ header {
 
 
 
+
+
+
+
+
+
 .about-book {
   border-top: 1px transparent solid;
 
-  @include medQuery(350px) {
+  @include medQuery(425px) {
     clear: both;
     padding-top: 2.5em;
   }
-  @include medQuery(480px) {
-    padding-top: 5em;
-  }
   @include medQuery(700px) {
-    padding-top: 4em;
-  }
-  @include medQuery(898px) {
     padding-top: 1em;
-    // background-color: pink;
   }
   @include medQuery(991px) {
     padding-top: 2.8em;
   }
   @include medQuery(1100px) {
     padding-top: 3em;
-    // background-color: pink;
     margin-top: 0;
   }
   h1 {
-    @include medQuery(350px) {
+    @include medQuery(425px) {
       text-align: center;
-      margin: 1.8em auto 1em;
+      margin-left: 50%;
+      transform: translateX(-50%);
       font-size: map-get($font, veryLarge);
-      // background-color: green;
-      width: 75%;
+      margin-top: 2em;
+      margin-bottom: 1em;
+      width: 90%;
     }
     @include medQuery(480px) {
-      font-size: map-get($font, veryLarge);
-      margin: 0.5em auto;
       padding-bottom: 1em;
+    }
+    @include medQuery(576px) {
+      padding-bottom: .5em;
     }
     @include medQuery(700px) {
       font-size: map-get($font, huge);
-      // background-color: red;
       padding-top: 0;
       padding-bottom: 0;
-      // margin-top: 3em;
       margin-bottom: 0.5em;
-    }
-    @include medQuery(768px) {
-      margin-top: 2em;
-      // margin-top: 1em;
-      // background-color: red;
     }
     @include medQuery(898px) {
       font-size: map-get($font, large) * 2;
-      padding-top: 0;
-      // background-color: green;
       margin-top: 1.2em;
     }
     @include medQuery(991px) {
       font-size: map-get($font, large) * 1.5;
       margin-top: 1em;
-      padding-top: 0em;
       padding-bottom: 1em;
-      // background-color: red;
       width: 85%;
     }
     @include medQuery(1100px) {
-      margin-top: 1em;
-      padding-top: 0;
       padding-bottom: 0.5em;
       text-align: center;
-      // background-color: red;
       font-size: map-get($font, huge);
     }
   }
@@ -444,70 +364,47 @@ header {
       margin-left: 50%;
       transform: translateX(-50%);
     }
-    @include medQuery(350px) {
-      // margin: 1em auto;
-    }
-    @include medQuery(991px) {
-      // margin: 0 auto;
-      // width: 100%;
-      // background-color: red;
-    }
     @include medQuery(1100px) {
       width: 80%;
     }
   }
   img {
-    margin-right: 10%;
-    margin-left: 10%;
-    width: 80%;
-    @include medQuery(350px) {
-      // padding-bottom: 0;
+    @include medQuery(425px) {
       margin-bottom: 0.5em;
-      // background-color: orange;
+      width: 80%;
+      margin-left: 50%;
+      transform: translateX(-50%);
     }
     @include medQuery(475px) {
       width: 60%;
-      margin-left: 50%;
-      transform: translateX(-50%);
-      // background-color: red;
     }
     @include medQuery(700px) {
       width: 50%;
       padding-bottom: 1em;
-
       margin-top: 0;
     }
     @include medQuery(898px) {
-      // margin-left: 33%;
-      // margin-right: 20%;
       margin-bottom: 1em;
       padding-bottom: 0;
       width: 35%;
       height: 21em;
     }
     @include medQuery(991px) {
-      // width: 30%;
-      width: 35%;
-      // margin-left: 35%;
       margin-top: -1em;
+      width: 52%;
       padding-top: 0;
-      padding-bottom: 0;
-      // margin-left: 24%;
       height: 25em;
     }
     @include medQuery(1100px) {
-      width: 40%;
+      width: 35%;
       margin-top: 0;
-      // margin-left: 50%;
-      transform: translateX(-50%);
       height: 23em;
       margin-bottom: 0em;
     }
   }
 
   .buyIt {
-    // display: none;
-    background-color: map-get($color, big);
+    background-color: map-get($color, navy);
     a {
       color: white;
     }
@@ -516,12 +413,10 @@ header {
       padding-left: 5%;
       padding-right: 5%;
       margin-left: 50%;
+      margin-bottom: 2em;
       transform: translateX(-50%);
       text-align: center;
-      // background-color: green;
       height: 2em;
-      margin-bottom: 2em;
-
       font-size: map-get($font, large);
       &:hover {
         cursor: pointer;
@@ -529,6 +424,9 @@ header {
     }
     @include medQuery(480px) {
       margin-top: 1.3em;
+    }
+    @include medQuery(576px) {
+      margin-top: .8em;
     }
     @include medQuery(700px) {
       margin-top: 0.5em;
@@ -538,15 +436,6 @@ header {
     }
     @include medQuery(991px) {
       margin-top: 0.5em;
-      // padding-top: -1em;
-      margin-left: 50%;
-      transform: translateX(-50%);
-      // background-color: red;
-    }
-    @include medQuery(1100px) {
-      margin-top: 0.5em;
-      margin-left: 50%;
-      transform: transitionX(-50%);
     }
   }
   // .paypalBtn{
@@ -562,7 +451,6 @@ header {
 }
 
 .about-me {
-  // padding-top: 5em;
   clear: both;
   @include medQuery(425px) {
     padding-top: 2em;
@@ -575,36 +463,22 @@ header {
   @include medQuery(898px) {
     padding-top: 3em;
     margin-top: 1em;
-    // background-color: green;
   }
   @include medQuery(991px) {
     padding-top: 5em;
     text-align: center;
-    // background-color: blue;
   }
   @include medQuery(1100px) {
-    // background-color: blue;
-
     padding-top: 0.5em;
-    margin-top: 1em;
   }
   h1 {
-    margin: 1em auto;
-    font-size: map-get($font, veryLarge);
-
-    width: 90%;
-    text-align: center;
-    // background-color: red;
-    @include medQuery(350px) {
-      // background-color: red;
+    @include medQuery(425px) {
+      font-size: map-get($font, huge);
+      width: 100%;
+      margin-left: 50%;
+      transform: translateX(-50%);
       margin-top: 2em;
-    }
-    @include medQuery(480px) {
-      // margin-top: 2em;
-      // background-color: red;
-    }
-    @include medQuery(898px) {
-      // background-color: red;
+      text-align: center;
     }
     @include medQuery(991px) {
       margin-top: 1.3em;
@@ -622,18 +496,16 @@ header {
   h3 {
     font-size: map-get($font, large);
     color: map-get($color, secondary);
-
     margin-top: 2em;
     margin-bottom: 1em;
     text-align: center;
   }
-  @include medQuery(350px) {
+  @include medQuery(425px) {
     width: 100%;
   }
 
   .materialsDiv {
     @include medQuery(425px) {
-      // background-color: green;
       text-align: center;
       width: 100%;
     }
@@ -642,18 +514,13 @@ header {
       width: 40%;
       margin-left: 5%;
       margin-right: 5%;
-      // background-color: green;
     }
   }
   .teachingDiv {
     @include medQuery(425px) {
-      // background-color: red;
-      // float: left;
-      width: 100%;
       transition: transformX(50%, -50%);
     }
     @include medQuery(991px) {
-      // background-color: red;
       width: 43%;
       margin-left: 2%;
       margin-right: 2%;
@@ -662,7 +529,6 @@ header {
   }
   .testingDiv {
     @include medQuery(425px) {
-      // background-color: orange;
       width: 100%;
     }
     @include medQuery(991px) {
@@ -675,287 +541,96 @@ header {
   }
   .developingDiv {
     @include medQuery(425px) {
-      // background-color: pink;
       margin-bottom: 5em;
     }
     @include medQuery(991px) {
       float: left;
       width: 45%;
-      margin-bottom: 2em;
-      // background-color: red;
+      margin-bottom: 7em;
     }
   }
 
-  .bothAudios {
-    @include medQuery(350px) {
-      width: 100%;
-      // height: 20em;
-      margin-bottom: 3em;
-      // padding-bottom: 5em;
-      // background-color: red;
-    }
+  .sampleDiv {
+    clear: both;
     @include medQuery(425px) {
-      margin-bottom: 2em;
-      // background-color: green;
-    }
-    @include medQuery(700px) {
-      // margin-bottom: 10em;
-    }
-    @include medQuery(991px) {
-      // background-color: green;
-      padding-bottom: 4em;
-      height: 10em;
-      float: left;
-      // margin-left: 5%;
-    }
-    @include medQuery(1100px) {
-      margin-top: 2em;
-      margin-bottom: 8em;
-      // background-color: green;
-    }
-    .paraAudio {
-      @include medQuery(350px) {
-        margin-top: 0;
-        margin-bottom: 2em;
-        // margin-right: 0;
-        padding-top: 2em;
-        padding-bottom: 0.2em;
-        // background-color: red;
-      }
-      @include medQuery(425px) {
-        margin-top: 1em;
-        margin-bottom: 2em;
-        padding-top: 0;
-        padding-bottom: 0.2em;
-      }
-      @include medQuery(480px) {
-        margin-top: 1em;
-        margin-bottom: 2em;
-        padding-top: 0;
-        padding-bottom: 0.2em;
-        width: 90%;
-        margin-left: 5%;
-        margin-right: 5%;
-      }
-      @include medQuery(700px) {
-        margin-top: 2.5em;
-        width: 80%;
-        margin-left: 10%;
-      }
-      @include medQuery(898px) {
-        width: 70%;
-        height: 3em;
-        margin-left: 15%;
-      }
-      @include medQuery(991px) {
-        width: 40%;
-        float: left;
-        margin-left: 5%;
-        height: 2em;
-        // background-color: red;
-      }
-      @include medQuery(1100px) {
-        // margin-top: 15em;
-        clear: both;
-        // background-color: red;
-        float: left;
-        // font-size: map-get($font, veryLarge);
-        width: 30%;
-        margin-left: 10%;
-        margin-bottom: 0;
-        height: 3em;
-      }
+      margin-bottom: 3em;
+      padding-top: 0;
+      padding-bottom: 3em;
+      padding-left: 0;
+      padding-right: 0;
+      height: 3em;
       p {
-        // grid-area: para;
-        @include medQuery(350px) {
-          // margin-left: 50%;
-          // transform: translateX(-50%);
-          font-size: map-get($font, smaller) * 1.5;
-          margin-bottom: 1em;
-          margin-top: 2em;
-          padding-top: 0.5em;
-          // background-color: pink;
-        }
         @include medQuery(425px) {
-          // margin-bottom: 1em;
-          margin-top: 0;
-          padding-top: 0.5em;
-        }
-        @include medQuery(480px) {
-          padding-top: 0.1em;
-        }
-        @include medQuery(700px) {
-          font-size: map-get($font, large);
-          // background-color: red;
-        }
-        @include medQuery(898px) {
-          font-size: map-get($font, veryLarge);
-        }
-        @include medQuery(991px) {
-          text-align: center;
-        }
-        @include medQuery(1100px) {
-          // grid-area: para para1;
-          margin-top: 0.5em;
-        }
-      }
-      audio {
-        @include medQuery(350px) {
+          width: 100%;
+          font-size: map-get($font, smaller) * 1.5;
           margin-left: 50%;
           transform: translateX(-50%);
-          // background-color: red;
-        }
-        .audio {
-          @include medQuery(350px) {
-            // background-color: blue;
-            // margin-left: 50%;
-            transform: translateX(-50%);
-            font-size: map-get($font, large);
-          }
         }
       }
     }
-    .sampleDiv {
-      @include medQuery(350px) {
-        margin-top: 0;
-        margin-bottom: 3em;
-        padding-top: 0;
-        padding-bottom: 3em;
-        padding-left: 0;
-        padding-right: 0;
-        height: 3em;
 
-        // background-color: red;
-        p {
-          @include medQuery(350px) {
-            width: 100%;
-            font-size: map-get($font, smaller) * 1.5;
-            margin-left: 50%;
-            transform: translateX(-50%);
-          }
+    @include medQuery(480px) {
+      margin-top: 0.2em;
+      height: 1em;
+      font-size: map-get($font, medium);
+    }
 
-          @include medQuery(700px) {
-            font-size: map-get($font, large);
-            margin-top: 2em;
-            // background-color: red;
-          }
-
-          @include medQuery(991px) {
-            font-size: map-get($font, large);
-            margin-top: 0.7em;
-            float: left;
-            // width: 40%;
-            // background-color: blue;
-          }
-        }
-      }
+    audio {
       @include medQuery(425px) {
-        // background-color: green;
-      }
-      @include medQuery(480px) {
-        margin-top: 0.2em;
-        height: 1em;
-        font-size: map-get($font, medium);
-      }
-      @include medQuery(700px) {
-        // height: 10em;
-        // background-color: purple;
+        margin-left: 50%;
+        transform: translateX(-50%);
       }
       @include medQuery(991px) {
-        width: 30%;
-        height: 2em;
-        margin-top: 0;
-        padding-top: 0;
-        padding-bottom: 0;
-        margin-bottom: 0;
-        margin-left: 10%;
-        // background-color: purple;
-        float: left;
+        width: 50%;
       }
-      @include medQuery(1100px) {
-        margin-top: 2.3em;
-        width: 40%;
-        margin-left: 10%;
-        // background-color: grey;
-      }
-      audio {
-        @include medQuery(350px) {
-          // background-color: red;
-          margin-left: 50%;
-          transform: translateX(-50%);
-        }
-        @include medQuery(991px) {
-          // background-color: yellow;
-        }
-      }
-      .sampleAudio {
-        @include medQuery(350px) {
-          margin-bottom: 3em;
-        }
-        @include medQuery(991px) {
-          // background-color: brown;
-        }
+    }
+    .sampleAudio {
+      @include medQuery(425px) {
+        margin-bottom: 3em;
       }
     }
   }
 }
 
-// .book-cover {
-//   width: 10%;
-// }
-
 //SLIDESHOW
 .testimonials {
   clear: both;
-
+  @include medQuery(991px) {
+    clear: both;
+  }
   @include medQuery(1100px) {
     margin-top: 0;
     padding-top: 1em;
   }
   h1 {
-    @include medQuery(320px) {
-      // background-color: red;
-      padding-top: 5em;
-      font-size: map-get($font, large);
-      width: 90%;
+    @include medQuery(425px) {
+      font-size: map-get($font, veryLarge);
+      text-align: center;
+      margin-top: 4em;
+      margin-bottom: 1.4em;
       margin-left: 50%;
       transform: translateX(-50%);
-      text-align: center;
-    }
-    @include medQuery(425px) {
-      margin-top: 4em;
+      width: 100%;
       padding-top: 3em;
-      // background-color: red;
     }
     @include medQuery(480px) {
       padding-top: 2.6em;
-      // background-color: red;
-    }
-    @include medQuery(425px) {
-      margin-bottom: 1.4em;
-    }
-    @include medQuery(480px) {
-      margin-bottom: 1.4em;
-      padding-top: 4em;
     }
     @include medQuery(700px) {
       margin-top: 3em;
       margin-bottom: 1em;
       padding-top: 2.2em;
-      // background-color: green;
       font-size: map-get($font, veryLarge);
     }
+    @include medQuery(898px) {
+      margin-top: 0;
+    }
     @include medQuery(991px) {
-      padding-top: 2em;
-      // background-color: green;
-      // width: 100%;
-      margin-top: 2.5em;
-      // margin-bottom: 0.3em;
+      margin-left: 40%;
+      transform: translateX(-40%);
     }
     @include medQuery(1100px) {
-      // margin-top: 2.5em;
       margin-top: 1em;
-      // background-color: green;
       margin-bottom: 0;
       padding-top: 1em;
       font-size: map-get($font, veryLarge);
@@ -974,89 +649,41 @@ header {
       width: 100%;
       display: none;
       img {
-        @include medQuery(320px) {
-          width: 100%;
-          height: 60vh;
-        }
-        @include medQuery(350px) {
-          // width: 100%;
-          // height: 50vh;
-          // background-color: red;
-        }
         @include medQuery(425px) {
-          height: 74vh;
+          width: 100%;
+          height: 67vh;
         }
         @include medQuery(480px) {
-          height: 72vh;
-        }
-        @include medQuery(576px) {
-          height: 77vh;
+          height: 69vh;
         }
         @include medQuery(700px) {
           height: 79vh;
-        }
-        @include medQuery(991px) {
-          // height: 76vh;
         }
         @include medQuery(1100px) {
           height: 78.5vh;
         }
       }
       blockquote {
-        display: block;
-        position: absolute;
-        // top: 5em;
-        // left: 10%;
-        // top: 0;
-        // left: 0;
-        font-size: map-get($font, large);
-        background-color: rgba(0, 0, 0, 0.3);
-        color: white;
-        padding: 2em 7em 2em 2em;
-        width: 90%;
-        margin: 0;
-        top: 0;
-        left: 0;
-        bottom: 3px;
-        right: 0;
-        @include medQuery(320px) {
-          // top: 1em;
-          // left: 1.8%;
-          font-size: 1.1em;
-          text-align: center;
-        }
-        @include medQuery(350px) {
-          font-size: map-get($font, smaller);
-          // width: 90%;
-        }
         @include medQuery(425px) {
+          background-color: rgba(0, 0, 0, 0.3);
+          color: white;
+          padding: 2em 7em 2em 2em;
+          width: 90%;
+          margin: 0;
+          top: 0;
+          left: 0;
+          bottom: 3px;
+          right: 0;
+          text-align: center;
+          display: block;
+          position: absolute;
           font-size: map-get($font, medium);
           width: 80%;
-          // margin-right: 15%;
-        }
-        @include medQuery(480px) {
-          font-size: map-get($font, medium);
-          // width: 100%;
-        }
-        @include medQuery(576px) {
-          // padding-left: 2%;
-          // padding-right: 5%;
-          // margin-right: 4%;
-          // margin-left: 3%;
-          font-size: map-get($font, medium);
-          text-align: center;
-          // width: %;
-          // background-color: green;
         }
         @include medQuery(768px) {
           font-size: map-get($font, large);
-          // padding-left: 2%;
-          // padding-right: 2%;
-          // margin-right: 3%;
         }
         @include medQuery(991px) {
-          font-size: map-get($font, large);
-          // padding-right:19em;
           width: 93%;
         }
       }
@@ -1064,11 +691,7 @@ header {
     a {
       position: absolute;
       background: whitesmoke;
-      // background-color:map-get($color, big);
-      color: map-get($color, big);
-
-      // color:white;
-
+      color: map-get($color, navy);
       border-radius: 50%;
       width: 1em;
       height: 1.4em;
@@ -1087,89 +710,75 @@ header {
       right: 0.8em;
     }
     .dots-container {
-      position: absolute;
-      top: 10em;
-      left: 19%;
-      display: inline-block;
-      border-radius: 25px;
-      background-color: whitesmoke;
-      width: 10em;
-      padding-left: 1.1em;
-      padding-top: 0.4em;
-      padding-bottom: 0.3em;
-      @include medQuery(320px) {
-        top: 17.9em;
-        margin-left: 1.3em;
-        // background-color: red;
-      }
       @include medQuery(425px) {
-        top: 28em;
-        left: 25%;
+        position: absolute;
+        display: inline-block;
+        border-radius: 25px;
+        background-color: whitesmoke;
+        width: 10em;
+        padding-left: 1.1em;
+        padding-top: 0.4em;
+        padding-bottom: 0.3em;
+        top: 25em;
+        left: 29%;
       }
       @include medQuery(480px) {
-        top: 27em;
-        left: 30%;
+        top: 26em;
+        left: 31%;
       }
       @include medQuery(576px) {
-        top: 29em;
-        left: 34%;
+        left: 35%;
       }
       @include medQuery(700px) {
         top: 30em;
-        left: 35%;
+        left: 38%;
       }
       @include medQuery(898px) {
-        // top: 30em;
-        left: 40%;
-      }
-      @include medQuery(991px) {
-        // top: 33em;
         left: 41%;
       }
-      @include medQuery(1100px) {
-        // top: 26em;
-        left: 40%;
+      @include medQuery(991px) {
+        left: 43%;
       }
       .dot {
         display: inline-block;
         border: 1px solid black;
-
         margin-right: 12px;
         width: 12px;
         height: 12px;
         border-radius: 50%;
       }
-
       .active {
-        background: map-get($color, big);
+        background: map-get($color, navy);
       }
     }
   }
 }
 
+
+
+
+
+
+
 //TEST STARTS HERE
 
 .test {
-  @include medQuery(350px) {
+  @include medQuery(425px) {
     padding-top: 3em;
     .test-instructions {
       @include medQuery(425px) {
-        // background-color: brown;
         font-size: map-get($font, large);
         .knowledgeTest {
-          @include medQuery(350px) {
+          @include medQuery(425px) {
             text-align: center;
             margin-top: 1.5em;
             margin-bottom: 1em;
-            // background-color: blue;
           }
           @include medQuery(480px) {
             margin: 1em 0.8em;
-            // background-color: red;
           }
           @include medQuery(576px) {
             margin: 0.5em 0.8em;
-            // background-color: blue;
           }
           @include medQuery(700px) {
             padding-top: 1.8em;
@@ -1185,7 +794,6 @@ header {
       .chose {
         @include medQuery(425px) {
           font-size: map-get($font, smaller);
-          // background-color: green;
           margin-bottom: 1.8em;
           text-align: center;
         }
@@ -1198,52 +806,34 @@ header {
     }
   }
   #quiz {
-    @include medQuery(425px) {
-      // background-color: purple;
-    }
     @include medQuery(991px) {
-      // background-color: purple;
       width: 80%;
       margin-left: 10%;
       margin-right: 10%;
     }
     .question {
       @include medQuery(350px) {
-        // background-color: red;
         margin-bottom: 4.5em;
       }
       .question-text {
         @include medQuery(350px) {
-          // background-color: grey;
           font-size: map-get($font, medium) * 1.1;
           margin-left: 5%;
           margin-top: 1em;
           margin-bottom: 1em;
           width: 90%;
         }
-        p {
-          @include medQuery(425px) {
-            // background-color: orange;
-          }
-        }
       }
     }
     .answers {
-      @include medQuery(350px) {
-        // background-color: green;
-        // margin-left: 10%;
-        // display: block;
-      }
       label {
         @include medQuery(425px) {
-          // background-color: purple;
           margin-left: 10%;
           display: block;
           margin-bottom: 1em;
         }
         span {
           @include medQuery(425px) {
-            // background-color: blue;
             font-size: map-get($font, medium);
           }
         }
@@ -1252,14 +842,13 @@ header {
     .correctAns {
       @include medQuery(350px) {
         display: none;
-        // background-color: grey;
         margin-left: 5%;
         margin-bottom: 1em;
         font-size: map-get($font, medium);
       }
     }
     .errMessage {
-      @include medQuery(350px) {
+      @include medQuery(425px) {
         display: none;
         color: red;
         font-size: map-get($font, medium) * 1.3;
@@ -1268,13 +857,12 @@ header {
     }
     .check-btn-container {
       @include medQuery(425px) {
-        // background-color: blue;
         height: 100%;
         width: 80%;
         margin-top: 1em;
+        margin-bottom: 4em;
         margin-left: 50%;
         transform: translateX(-50%);
-        margin-bottom: 4em;
       }
       .check {
         color: white;
@@ -1291,21 +879,15 @@ header {
       }
       .note {
         @include medQuery(425px) {
-          // background-color: green;
           display: none;
-          // width: 100%;
           margin-top: 1em;
           text-align: center;
-          // margin-left: 50%;
-          // transform: translateX(-50%);
           font-size: map-get($font, medium);
         }
       }
     }
-
     .scoreContainer {
       @include medQuery(425px) {
-        // background-color: red;
         margin-top: 0.6em;
         margin-bottom: 3em;
         width: 100%;
@@ -1321,7 +903,6 @@ header {
     }
     .finalVerdict {
       @include medQuery(425px) {
-        // background-color: blue;
       }
       .verdict {
         @include medQuery(425px) {
@@ -1331,7 +912,6 @@ header {
     }
     .reset {
       @include medQuery(350px) {
-        // background-color: red;
         display: none;
         width: 80%;
         margin-top: 2em;
@@ -1342,23 +922,16 @@ header {
       }
       @include medQuery(991px) {
         margin-top: 5em;
-        // background-color: purple;
         display: none;
-        // margin-left: 50%;
-        // transform: transitionX(-50%);
       }
       .resetBtn {
         @include medQuery(350px) {
           font-size: map-get($font, large);
-
           margin-left: 50%;
           transform: translateX(-50%);
           padding: 0.5em;
           width: 50%;
           border-radius: 25px;
-        }
-        @include medQuery(1100px) {
-          // margin-left: 8%;
         }
       }
       a {
@@ -1370,11 +943,8 @@ header {
   .activeGreen {
     color: rgb(37, 160, 37);
     font-weight: bold;
-    // color: white;
   }
-
   .activeRed {
-    // background-color: red;
     color: red;
     font-weight: bold;
   }
@@ -1390,35 +960,47 @@ header {
 footer {
   margin-top: 0;
   padding-bottom: 2em;
-  height: 10em;
-  // width: 100%;
-  // background-color: red;
-  // background-color: rgb(105, 169, 187);
+  height: 13em;
+  background-color: map-get($color, accent);
+  @include medQuery(425px) {
+    height: 16em;
+  }
   @include medQuery(480px) {
-    // width: 100%;
-    // margin-left: 0;
+    height: 14em;
+  }
+  @include medQuery(576px) {
+    height: 15em;
   }
   @include medQuery(991px) {
     margin-left: 0;
+    height: 14em;
   }
   @include medQuery(1100px) {
     margin-left: 0;
-    width: 100%;
-    // background-color: yellow;
+    height: 15em;
   }
   .footerContactDetails {
     padding-bottom: 1em;
-    // background-color: red;
+    @include medQuery(898px) {
+      width: 100%;
+    }
     h2 {
       text-align: center;
       padding-top: 1.3em;
       padding-bottom: 0.8em;
+      @include medQuery(898px) {
+        margin-left: 50%;
+        transform: translateX(-50%);
+      }
     }
     p {
-      // grid-area: p;
       text-align: center;
       font-size: 1.2em;
       padding-bottom: 1em;
+      @include medQuery(898px) {
+        margin-left: 50%;
+        transform: translateX(-50%);
+      }
     }
   }
   .paypalBtn {
@@ -1430,107 +1012,88 @@ footer {
   .footerNav ul {
     @include medQuery(350px) {
       width: 100%;
-      // background-color: orange;
       display: inline-block;
-      // padding-top: ;
-      padding-bottom: 1em;
+      padding-bottom: 0.5em;
       margin-bottom: 0;
-      // margin-left: 0em;
-      height: 3em;
-      float: left;
-    }
-    @include medQuery(425px) {
       margin-left: 0.1em;
+      float: left;
       font-size: map-get($font, smaller) * 1.2;
     }
+
     @include medQuery(480px) {
       margin-left: 2%;
       width: 95%;
       font-size: map-get($font, smaller) * 1.1;
     }
     @include medQuery(576px) {
-      // background-color: brown;
       width: 90%;
       padding-left: 3%;
     }
     @include medQuery(700px) {
       width: 100%;
       margin-left: 0;
-      // background-color: brown;
+    }
+    @include medQuery(898px) {
+      margin-left: 10%;
+      width: 90%;
     }
     @include medQuery(991px) {
-      //  background-color: brown;
-      margin-left: 2%;
-      padding-left: 1%;
+      margin-left: 0;
+      width: 100%;
     }
     @include medQuery(1100px) {
-      // background-color: orange;
-      // float: left;
-      width: 100%;
       height: 3em;
-      margin-left: 0;
+      margin-left: 3%;
     }
     li {
       font-size: map-get($font, smaller);
       @include medQuery(350px) {
-        // background-color: green;
         display: inline-block;
         width: 20%;
         margin-left: 20%;
         margin-right: 0.5em;
-        margin-bottom: 0.5em;
         float: left;
         margin-top: 0;
         text-align: center;
       }
       @include medQuery(425px) {
-        // background-color: red;
-        margin-top: 1em;
+        margin-top: 0.5em;
         margin-left: 1%;
-        width: 14%;
+        width: 30%;
         margin-right: 2%;
+        &:nth-child(7) {
+          width: 100%;
+        }
       }
       @include medQuery(480px) {
         font-size: map-get($font, smaller);
-        // margin-left: 0;
-        // margin-right: 8%;
       }
       @include medQuery(576px) {
-        font-size: map-get($font, smaller);
         margin-right: 2%;
+        margin-bottom: 0.3em;
         height: 1em;
       }
       @include medQuery(700px) {
         margin-left: 0;
-        width: 17%;
-      }
-      @include medQuery(767px) {
-        font-size: map-get($font, medium);
-      }
-      @include medQuery(898px) {
-        // text-align: center;
-        width: 15%;
-        margin-right: 4%;
-        // background-color: blue;
-      }
-      @include medQuery(991px) {
-        // background-color: red;
-        font-size: map-get($font, smaller) * 1.1;
-        width: 13%;
-        margin-right: 3%;
-        float: left;
-      }
-      @include medQuery(1100px) {
-        // width: 14%;
       }
 
+      @include medQuery(898px) {
+        width: 25%;
+        margin-left: 6%;
+        transform: translateX(-50%);
+      }
+      @include medQuery(991px) {
+        font-size: map-get($font, smaller) * 1.1;
+        width: 11%;
+        margin-left: 3%;
+        float: left;
+      }
       a {
         @include medQuery(350px) {
           font-size: map-get($font, smaller);
           margin-top: 0;
           margin-right: 1.5em;
           margin-left: 0;
-          // background-color: red;
           width: 100%;
           float: left;
           color: map-get($color, big);
@@ -1541,38 +1104,31 @@ footer {
         @include medQuery(425px) {
           font-size: map-get($font, smaller);
           text-align: center;
-          // background-color: black;
-        }
-        @include medQuery(480px) {
-          // text-align: center;
         }
         @include medQuery(576px) {
-          // text-align: center;
-          // margin: 2em auto;
-          width: 100%;
           font-size: map-get($font, medium);
         }
         @include medQuery(700px) {
-          font-size: map-get($font, medium);
-          // background-color: purple;
-          // text-align: center;
           margin-left: 0;
           margin-right: 0;
         }
         @include medQuery(898px) {
           font-size: map-get($font, smaller);
-          // background-color: green;
-          margin-left: 0;
           padding-left: 0;
           text-align: center;
         }
-        @include medQuery(1100px) {
-          // font-size: map-get($font, medium);
-          // background-color: green;
-          margin-left: 0;
-          padding-left: 0;
-          // text-align: center;
-        }
+      }
+    }
+    .copyright {
+      @include medQuery(425px) {
+        margin-top: 1.5em;
+      }
+      @include medQuery(898px) {
+        text-align: center;
+        padding-top: 0.5em;
+        padding-bottom: 1.5em;
+        margin-left: 45%;
+        transform: translateX(-50%);
       }
     }
   }
