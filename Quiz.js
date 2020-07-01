@@ -2,7 +2,7 @@ import { elements } from '../views/base';
 
 export function calcScore(checkedElements, score) {
 	checkedElements.forEach(cur => {
-		if ( cur.dataset.answer === 'true') {
+		if (cur.dataset.answer === 'true') {
 			score++;
 		}
 	});
