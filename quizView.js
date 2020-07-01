@@ -1,13 +1,11 @@
 import { elements } from './base';
 
-
 export function getInput() {
 	let checkedElements = elements.nameAtt.map(cur => {
 		return document.querySelector(`[name=${cur}]:checked`);
 	});
 	return checkedElements;
 }
-
 
 export function displayErrMsgs(i) {
 	elements.errMessages[i].style.display = 'block';
@@ -16,16 +14,13 @@ export function displayErrMsgs(i) {
 
 export function deleteErrMsgs(i) {
 	elements.errMessages[i].style.display = 'none';
-
 }
-
 
 export function deleteNote(errMsgIndex) {
 	if (errMsgIndex === -1) {
 		elements.note.style.display = 'none';
 	}
 }
-
 
 export function displayNote() {
 	elements.note.style.display = 'inline-block';
@@ -43,7 +38,6 @@ export function feedback(checkedElements) {
 	});
 }
 export function displayScore(score) {
-	elements.scoreContainer.style.display = 'block';
 	elements.scoreHeading.style.display = "block";
 	elements.yourScore.innerHTML = `${score}/${elements.questions.length-1}`;
 	
@@ -58,13 +52,10 @@ export function displayComment(score) {
 	})
 }
 
-
 export function displayResetBtn() {
 	elements.reset.style.display = 'inline-block';
 	elements.resetBtn.style.display = 'inline-block';
-
 }
-
 
 export function resetUi() {
 	elements.checkBtn.disabled = false;
