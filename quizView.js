@@ -45,7 +45,7 @@ export function feedback(checkedElements) {
 export function displayScore(score) {
 	elements.scoreContainer.style.display = 'block';
 	elements.scoreHeading.style.display = "block";
-	elements.yourScore.innerHTML = `${score}/${elements.questions.length}`;
+	elements.yourScore.innerHTML = `${score}/${elements.questions.length-1}`;
 	
 }
 
