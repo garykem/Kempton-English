@@ -27,7 +27,7 @@ export const elements = {
 	scoreHeading: document.querySelector('.scoreHeading'),
 	resetBtn: document.querySelector('.resetBtn'),
 	reset: document.querySelector('.reset'),
-	comments:['Oh dear...very bad!','Well, at least you got one right!','Okay, that\'s not too bad!','Not bad at all!','The perfect score. Well done!'],
+	comments:['Oh dear... you really need to get this book!','Well, at least you got one right!','Okay, that\'s not too bad!','Not bad at all!','The perfect score. Well done!'],
 	scoresArray: [0, 1, 2, 3, 4],
 	commentContainer: document.querySelector('.verdict')
 
